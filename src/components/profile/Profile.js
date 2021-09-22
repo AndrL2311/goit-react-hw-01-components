@@ -1,12 +1,6 @@
-import defaultImage from '.';
+import defaultImage from '../default.jpg';
 function Profile(props) {
-  const {
-    avatar = defaultImage,
-    name = 'n/a',
-    tag = 'n/a',
-    location = 'n/a',
-    stats = 'n/a',
-  } = props;
+  const { avatar = defaultImage, name = 'n/a', tag, location, stats } = props;
   return (
     <div class="profile">
       <div class="description">
