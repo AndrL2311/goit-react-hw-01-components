@@ -1,7 +1,12 @@
-// import user from './components/profile/user.json';
-
+import defaultImage from '.';
 function Profile(props) {
-  const { avatar, name, tag, location, stats } = props;
+  const {
+    avatar = defaultImage,
+    name = 'n/a',
+    tag = 'n/a',
+    location = 'n/a',
+    stats = 'n/a',
+  } = props;
   return (
     <div class="profile">
       <div class="description">
