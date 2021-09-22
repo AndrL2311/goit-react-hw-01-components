@@ -1,6 +1,6 @@
 function Statistics(props) {
   const { title, stats } = props;
-  // return (
+  return <div>qwqwe</div>;
   // <section class="statistics">
   //   {/* {title && (<h2 class="title">{title}/h2>)} */}
 
