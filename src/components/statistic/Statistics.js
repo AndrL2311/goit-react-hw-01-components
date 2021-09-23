@@ -1,20 +1,39 @@
+import PropTypes from 'prop-types';
 function Statistics(props) {
   const { title, stats } = props;
-  return <div>qwqwe</div>;
-  // <section class="statistics">
-  //   {/* {title && (<h2 class="title">{title}/h2>)} */}
-
-  //   <ul class="stat-list">
-  //     stats.map(stat =>
-  //     {
-  //       <li class="item">
-  //         <span class="label">{stat.label}</span>
-  //         <span class="percentage">{stat.label}</span>
-  //       </li>
-  //     }
-  //     );
-  //   </ul>
-  // </section>
-  //   );
+  console.log(stats);
+  return (
+    <section className="statistics">
+      {title && <h2 className="title">{title}</h2>}
+      {stats.map(stat => {
+        return (
+          <StatisticItem
+            key={stat.id}
+            label={stat.label}
+            percentage={stat.percentage}
+          />
+        );
+      })}
+    </section>
+  );
 }
+
+function StatisticItem({ label, percentage }) {
+  return (
+    <li className="item">
+      <span className="label">{label}</span>
+      <span className="percentage">{percentage}</span>
+    </li>
+  );
+}
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.array,
+};
+
+StatisticItem.propTypes = {
+  label: PropTypes.string,
+  percentage: PropTypes.number,
+};
 export default Statistics;
