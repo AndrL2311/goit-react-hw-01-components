@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import defaultImage from '../default.jpg';
 
 function Profile(props) {
-  const { avatar = defaultImage, name = 'n/a', tag, location, stats } = props;
+  const { avatar, name, tag, location, stats } = props;
   return (
     <div className="profile">
       <div className="description">
@@ -30,6 +30,10 @@ function Profile(props) {
     </div>
   );
 }
+Profile.defaultProps = {
+  avatar: defaultImage,
+  name: 'N/A',
+};
 
 Profile.propTypes = {
   avatar: PropTypes.string,
