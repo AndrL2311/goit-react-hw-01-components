@@ -1,31 +1,17 @@
 import PropTypes from 'prop-types';
-function Statistics(props) {
-  const { title, stats } = props;
+function Statistics({ title, stats }) {
+  const StatisticItem = stats.map(stat => (
+    <li className="item" key={stat.id}>
+      <span className="label">{stat.label}</span>
+      <span className="percentage">{stat.percentage}</span>
+    </li>
+  ));
 
   return (
     <section className="statistics">
       {title && <h2 className="title">{title}</h2>}
-      <ul className="stat-list">
-        {stats.map(stat => {
-          return (
-            <StatisticItem
-              key={stat.id}
-              label={stat.label}
-              percentage={stat.percentage}
-            />
-          );
-        })}
-      </ul>
+      <ul className="stat-list">{StatisticItem}</ul>
     </section>
-  );
-}
-
-function StatisticItem({ label, percentage }) {
-  return (
-    <li className="item">
-      <span className="label">{label}</span>
-      <span className="percentage">{percentage}</span>
-    </li>
   );
 }
 
@@ -36,8 +22,4 @@ Statistics.propTypes = {
   ),
 };
 
-StatisticItem.propTypes = {
-  label: PropTypes.string,
-  percentage: PropTypes.number,
-};
 export default Statistics;
