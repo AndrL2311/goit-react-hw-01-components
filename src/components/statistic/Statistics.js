@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
 function Statistics(props) {
   const { title, stats } = props;
-  console.log(stats);
+
   return (
     <section className="statistics">
       {title && <h2 className="title">{title}</h2>}
-      {stats.map(stat => {
-        return (
-          <StatisticItem
-            key={stat.id}
-            label={stat.label}
-            percentage={stat.percentage}
-          />
-        );
-      })}
+      <ul className="stat-list">
+        {stats.map(stat => {
+          return (
+            <StatisticItem
+              key={stat.id}
+              label={stat.label}
+              percentage={stat.percentage}
+            />
+          );
+        })}
+      </ul>
     </section>
   );
 }
@@ -29,7 +31,9 @@ function StatisticItem({ label, percentage }) {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.array,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string.isRequired }),
+  ),
 };
 
 StatisticItem.propTypes = {
