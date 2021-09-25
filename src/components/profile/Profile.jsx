@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 
-// import s from '';
+import s from './Profile.module.css';
 import defaultImage from '../default.jpg';
 
 function Profile(props) {
   const { avatar, name, tag, location, stats } = props;
   return (
-    <div className="profile">
+    <div className={s.profile}>
       <div className="description">
         <img src={avatar} alt="Аватар пользователя" className="avatar" />
         <p className="name">{name}</p>
@@ -14,7 +14,7 @@ function Profile(props) {
         <p className="location">{location}</p>
       </div>
 
-      <ul className="stats">
+      <ul className={s.list}>
         <li>
           <span className="label">Followers</span>
           <span className="quantity">{stats.followers}</span>
