@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+// import s from '';
 import defaultImage from '../default.jpg';
 
 function Profile(props) {
