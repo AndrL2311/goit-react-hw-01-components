@@ -1,6 +1,9 @@
 .profile {
-  width: 300px;
-  margin: 30px auto;
+  width: 430px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 88px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -8,10 +11,32 @@
 }
 
 .description {
-  padding: 20px 0 10px 0;
+  box-sizing: border-box;
+  width: 249px;
+  padding: 10px;
+
+  background-color: white;
   border-bottom: 1px solid rgb(193, 185, 185);
 
   text-align: center;
+}
+
+.avatar {
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.tag,
+.location {
+  color: #9c9c9c;
+  margin-top: 10px;
 }
 
 .text {
@@ -19,16 +44,28 @@
   justify-content: center;
 }
 
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.stats {
+  width: 249px;
   display: flex;
   justify-content: space-around;
   text-align: center;
   background-color: rgb(223, 210, 210);
 }
 
+.item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 82px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-bottom: 1px solid rgb(193, 185, 185);
+}
 .label {
-  padding-right: 8px;
+  margin-bottom: 5px;
+  color: #9c9c9c;
+}
+
+.quantity {
+  font-weight: 700;
 }
